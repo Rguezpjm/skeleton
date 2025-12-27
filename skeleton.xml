@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false'
+      b:defaultwidgetversion='2'
+      b:js='true'
+      b:layoutsVersion='3'
+      b:responsive='true'
+      expr:dir='data:blog.locale.languageDirection'
+      expr:lang='data:blog.locale.language'
+      xmlns='http://www.w3.org/1999/xhtml'
+      xmlns:b='http://www.google.com/2005/gml/b'
+      xmlns:data='http://www.google.com/2005/gml/data'
+      xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<!--THEME BASICO CREADO POR JOSE RODRIGUEZ BASADO EN LOS TEMAS PREDETERMINADOS DE BLOGGER-->
+
+<head>
+<!--METAS DE BLOGGER-->
+<link expr:href='data:view.url.canonical' rel='canonical'/>
+<meta expr:charset='data:blog.encoding'/>
+<meta expr:content='data:view.isHomepage ? &quot;website&quot; : &quot;article&quot;' property='og:type'/>
+<meta content='width=device-width,initial-scale=1' name='viewport'/>
+<meta expr:content='data:blog.title' name='application-name'/>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<meta content='unsafe-url' name='referrer'/>
+<meta content='summary_large_image' name='twitter:card'/>
+<link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+<meta expr:content='data:view.url.canonical' property='og:url'/>
+<link expr:href='data:view.url.canonical' rel='canonical'/>
+<b:if cond='data:view.description'>
+   <meta expr:content='data:view.description.escaped' property='og:description'/>
+   <meta expr:content='data:view.description.escaped' name='description'/>
+</b:if>
+<b:if cond='data:view.isError or data:view.isArchive or data:view.isSearch'>
+   <meta content='noindex,follow' name='robots'/>
+</b:if>
+<b:if cond='data:widgets'>
+   <b:loop values='data:widgets.Blog.first.posts where (p =&gt; p.featuredImage) map (p =&gt; p.featuredImage)' var='imageUrl'>
+     <meta expr:content='resizeImage(data:imageUrl,1200,&quot;1200:630&quot;)' property='og:image'/>
+   </b:loop>
+   <meta content='1200' property='og:image:width'/>
+   <meta content='630' property='og:image:height'/>
+</b:if>
+<b:with value='data:view.isError ? data:messages.theresNothingHere : data:view.title.escaped' var='title'>
+   <meta expr:content='data:title' property='og:title'/>
+   <meta expr:content='data:title' name='twitter:title'/>
+   <title><data:title/></title>
+</b:with>
+<b:if cond='data:blog.feedLinks'>
+<b:with value='path(data:blog.homepageUrl.canonical,&quot;feeds/posts/default&quot;)' var='feeds'>
+   <link expr:href='data:feeds' rel='alternate' title='Atom 1.0' type='application/atom+xml'/>
+   <link expr:href='data:feeds params {alt: &quot;rss&quot;}' rel='alternate' title='RSS 2.0' type='application/rss+xml'/>
+</b:with>
+</b:if>
+<b:if cond='data:widgets.AdSense.first or data:blog.adsenseClientId'>
+   <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
+</b:if>
+<script type='application/ld+json'>
+{
+    &quot;@context&quot;: &quot;http://schema.org&quot;,
+    &quot;@type&quot;: &quot;WebSite&quot;,
+    &quot;url&quot;: &quot;<data:blog.homepageUrl.canonical/>&quot;,
+    &quot;potentialAction&quot;: {
+        &quot;@type&quot;: &quot;SearchAction&quot;,
+        &quot;target&quot;: &quot;<data:blog.searchUrl/>?q={search_term_string}&quot;,
+        &quot;query-input&quot;: &quot;required name=search_term_string&quot;
+    }
+}
+</script>
+
+<!--CSS DEL TEMPLATE-->
+  <b:skin><![CDATA[
+/*!
+=> Theme Name: {{THEME_NAME}}
+=> Theme URI:  {{URL_AUTOR_PAGE}}
+=> Author Name: {{AUTHOR_NAME}}
+=> Author URI:  {{YOUR_SOCIAL_MEDIA}}
+=> Theme Version: {{1.0 or Superior}}
+=> License: Creative Commons Atribucion-NoComercial 4.0 Internacional
+=> Licencse URI: http://creativecommons.org/licenses/by-nc/4.0/
+*/
+/* Base mínima para iniciar una plantilla */
+
+
+]]></b:skin>
+</head>
+
+<body>
+  <!--Aqui va tu header-->
+
+  <!-- Contenido principal (posts) -->
+  <b:section id='Blog'>
+    <b:widget id='Blog1' locked='true' title='Entradas del blog' type='Blog' version='2' visible='true'>
+
+      <b:includable id='main'>
+        <b:if cond='data:view.isMultipleItems'>
+            <b:loop values='data:posts' var='post'>
+                <b:include data='post' name='post'/>
+                <!--Incluye inicio del post, CARDS, Or SECTION EJEMPLO: <div class="POSTS_cards">-->
+            </b:loop>
+        <b:include name='postPagination'/>
+        <b:else/>
+            <b:loop values='data:posts' var='post'>
+                <b:include data='post' name='post'/>
+                <!--Incluye posts por defecto-->
+                <b:include data='post' name='comments'/>
+                <!--Incluye Comentarios por defecto-->
+            </b:loop>
+        </b:if>
+      </b:includable>
+
+      <!--Comentarios Blogger x Defecto-->'
+
+
+      <!-- Cuerpo de los Cards de las entradas, Cuerpo de las Entradas (POSTS) y Paginas Estaticas-->
+
+      <b:includable id='card'>
+        <!--AQUI VA TU CODIGO HTML QUE MUESTRA LAS ENTRADAS O PUEDES REFERIRTE AL CODIGO DE MAS ABAJO EN CASO DE QUE LO QUIERAS TODO EN UN MISMO LUGAR-->
+      </binclude>
+
+      <b:includable id='post' var='post'>
+        <b:if cond='data:view.isMultipleItems'>
+            <!--Cuerpo del Home Page, aqui va los cards de entradas o cualqueir div que quieras mostar en el (HOME PAGE)-->
+
+            <!--Si optaste por la version de arriba, simplemente debes de llamar el includable de la siguiente manera: <b:include name='card'/>-->
+        <b:elseif cond='data:view.isPost'/>
+            <!--Cuerpo de las entradas-->
+        <b:elseif cond='data:view.isPage'/>
+            <!--Cuerpo de las paginas estaticas-->
+
+            <!--Si quieres agregar diferentes views, es decir diferentes disenos lo puedes hacer de la siguiente manera
+            
+            <b:if cond='data:view.url.canonical == &quot;URL_DE_LA_PAGINA_DE_TU_BLOG;'>
+                <b:include data='post' name='NOMBRE_DE_LA_PAGINA'/>
+            </b:if>
+
+            ## SIMPLEMENTE DESCOMENTA
+            -->
+      </b:includable>
+
+    </b:widget>
+  </b:section>
+
+    <!--Google Analytics-->
+    <b:include data='blog' name='google=analytics'/>
+</body>
+</html>
