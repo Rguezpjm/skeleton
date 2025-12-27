@@ -1,7 +1,7 @@
 <div align="center">
   <img width='192' src="https://github.com/Rguezpjm/skeleton/blob/main/Logo.png?raw=true" align="center" />
   
-  # Skeleton
+  ## Skeleton
   
   <p>Punto de partida para desarrollos de plantillas para la plataforma Blogger</p>
   <p>
@@ -10,11 +10,17 @@
   </p>
 </div>
 
-# Caracteristicas
+## Caracteristicas
 - Código limpio sin CSS y sin JS (Se elimino todo el contenido, dejando lo esencial)
 - Optimizado para SEO.
 - Fácil de entender y modificar.
 
-# Como empezar
+## Como empezar
 Clona o descarga este repositorio con el siguiente comando:
 
+```
+git clone https://github.com/Rguezpjm/skeleton.git
+```
+## License
+
+**Canvas** is licensed under the GNU General Public License v3.0
