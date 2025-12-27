@@ -1,2 +1,2 @@
-# skeleton
-Punto de partida para facilitar los desarrollos en la plataforma Blogger
+<div align="center">
+  <img width='192' src="#" align="center" />
