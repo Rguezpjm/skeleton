@@ -109,14 +109,14 @@
         </b:if>
       </b:includable>
 
-      <!--Comentarios Blogger x Defecto-->'
+      <!--Comentarios Blogger x Defecto-->
 
 
       <!-- Cuerpo de los Cards de las entradas, Cuerpo de las Entradas (POSTS) y Paginas Estaticas-->
 
       <b:includable id='card'>
         <!--AQUI VA TU CODIGO HTML QUE MUESTRA LAS ENTRADAS O PUEDES REFERIRTE AL CODIGO DE MAS ABAJO EN CASO DE QUE LO QUIERAS TODO EN UN MISMO LUGAR-->
-      </binclude>
+      </b:includable>
 
       <b:includable id='post' var='post'>
         <b:if cond='data:view.isMultipleItems'>
@@ -136,12 +136,13 @@
 
             ## SIMPLEMENTE DESCOMENTA
             -->
+            </b:if>
       </b:includable>
 
     </b:widget>
   </b:section>
 
     <!--Google Analytics-->
-    <b:include data='blog' name='google=analytics'/>
+    <b:include data='blog' name='google-analytics'/>
 </body>
 </html>
